@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RailConnect - Railway Ticket Booking</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <!-- Logo -->
+            <div class="navbar-logo">
+                <span class="logo-icon">🚂</span>
+                <span class="logo-text">RailConnect</span>
+            </div>
+
+            <!-- Navigation Links -->
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="search-trains.html" class="nav-link">Search Trains</a>
+                </li>
+                <li class="nav-item">
+                    <a href="my-bookings.html" class="nav-link">My Bookings</a>
+                </li>
+                <li class="nav-item">
+                    <a href="profile.html" class="nav-link">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a href="login.html" class="nav-link login-btn">Login/Register</a>
+                </li>
+                <li class="nav-item" id="logout-item" style="display: none;">
+                    <a href="logout.html" class="nav-link logout-btn">Logout</a>
+                </li>
+            </ul>
+
+            <!-- Mobile Menu Toggle -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Book Your Train Tickets Online</h1>
+            <p>Fast, Safe and Reliable Railway Booking Experience</p>
+            <div class="hero-decoration">
+                <div class="train-animation">🚂 ➜ 🚂</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN SEARCH SECTION -->
+    <section class="search-section">
+        <div class="search-container">
+            <h2>Plan Your Journey</h2>
+            
+            <form id="searchForm" class="search-form">
+                <!-- FROM STATION -->
+                <div class="form-group">
+                    <label for="fromStation">
+                        <span class="label-icon">📍</span>
+                        From Station
+                    </label>
+                    <select id="fromStation" name="fromStation" required>
+                        <option value="">Select departure station</option>
+                        <option value="DEL">New Delhi Railway Station</option>
+                        <option value="MUM">Mumbai Central</option>
+                        <option value="BLR">Bangalore City Railway Station</option>
+                        <option value="HYD">Hyderabad Deccan</option>
+                        <option value="KOL">Kolkata Central</option>
+                        <option value="CHE">Chennai Central</option>
+                    </select>
+                </div>
+
+                <!-- TO STATION -->
+                <div class="form-group">
+                    <label for="toStation">
+                        <span class="label-icon">📍</span>
+                        To Station
+                    </label>
+                    <select id="toStation" name="toStation" required>
+                        <option value="">Select destination station</option>
+                        <option value="DEL">New Delhi Railway Station</option>
+                        <option value="MUM">Mumbai Central</option>
+                        <option value="BLR">Bangalore City Railway Station</option>
+                        <option value="HYD">Hyderabad Deccan</option>
+                        <option value="KOL">Kolkata Central</option>
+                        <option value="CHE">Chennai Central</option>
+                    </select>
+                </div>
+
+                <!-- JOURNEY DATE -->
+                <div class="form-group">
+                    <label for="journeyDate">
+                        <span class="label-icon">📅</span>
+                        Journey Date
+                    </label>
+                    <input 
+                        type="date" 
+                        id="journeyDate" 
+                        name="journeyDate" 
+                        required
+                        min="">
+                </div>
+
+                <!-- CLASS SELECTION -->
+                <div class="form-group">
+                    <label for="classType">
+                        <span class="label-icon">💺</span>
+                        Class
+                    </label>
+                    <select id="classType" name="classType" required>
+                        <option value="">Select class</option>
+                        <option value="AC First Class">AC First Class</option>
+                        <option value="AC 2 Tier">AC 2 Tier</option>
+                        <option value="AC 3 Tier">AC 3 Tier</option>
+                        <option value="Sleeper">Sleeper</option>
+                        <option value="Second Sitting">Second Sitting</option>
+                    </select>
+                </div>
+
+                <!-- NUMBER OF PASSENGERS -->
+                <div class="form-group">
+                    <label for="passengers">
+                        <span class="label-icon">👥</span>
+                        Passengers
+                    </label>
+                    <input 
+                        type="number" 
+                        id="passengers" 
+                        name="passengers" 
+                        min="1" 
+                        max="6" 
+                        value="1"
+                        required>
+                </div>
+
+                <!-- SEARCH BUTTON -->
+                <div class="form-group button-group">
+                    <button type="submit" class="search-btn">
+                        🔍 Search Trains
+                    </button>
+                </div>
+            </form>
+
+            <!-- Validation Error Message -->
+            <div id="errorMessage" class="error-message" style="display: none;"></div>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section class="features">
+        <div class="features-container">
+            <h2>Why Choose RailConnect?</h2>
+            
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon">✅</div>
+                    <h3>Easy Booking</h3>
+                    <p>Book your tickets in just 3 simple steps</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Secure Payment</h3>
+                    <p>Multiple payment options with SSL encryption</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Mobile Friendly</h3>
+                    <p>Book anytime, anywhere from your phone</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🎫</div>
+                    <h3>Instant Confirmation</h3>
+                    <p>Get PNR and ticket details instantly</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Best Prices</h3>
+                    <p>Compare and book at the best fares</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🆘</div>
+                    <h3>24/7 Support</h3>
+                    <p>Customer support available round the clock</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- POPULAR ROUTES SECTION -->
+    <section class="popular-routes">
+        <div class="routes-container">
+            <h2>Popular Routes</h2>
+            
+            <div class="routes-grid">
+                <!-- Route 1 -->
+                <div class="route-card" onclick="setRoute('DEL', 'MUM')">
+                    <div class="route-info">
+                        <h4>Delhi → Mumbai</h4>
+                        <p class="route-distance">1400 km</p>
+                        <p class="route-duration">17 hours</p>
+                    </div>
+                    <div class="route-arrow">→</div>
+                </div>
+
+                <!-- Route 2 -->
+                <div class="route-card" onclick="setRoute('DEL', 'BLR')">
+                    <div class="route-info">
+                        <h4>Delhi → Bangalore</h4>
+                        <p class="route-distance">2200 km</p>
+                        <p class="route-duration">16 hours</p>
+                    </div>
+                    <div class="route-arrow">→</div>
+                </div>
+
+                <!-- Route 3 -->
+                <div class="route-card" onclick="setRoute('DEL', 'HYD')">
+                    <div class="route-info">
+                        <h4>Delhi → Hyderabad</h4>
+                        <p class="route-distance">1600 km</p>
+                        <p class="route-duration">13 hours</p>
+                    </div>
+                    <div class="route-arrow">→</div>
+                </div>
+
+                <!-- Route 4 -->
+                <div class="route-card" onclick="setRoute('MUM', 'BLR')">
+                    <div class="route-info">
+                        <h4>Mumbai → Bangalore</h4>
+                        <p class="route-distance">1000 km</p>
+                        <p class="route-duration">12 hours</p>
+                    </div>
+                    <div class="route-arrow">→</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>About RailConnect</h4>
+                <p>India's trusted online railway ticket booking platform since 2024</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#trains">Trains</a></li>
+                    <li><a href="#bookings">Bookings</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>Email: support@railconnect.com</p>
+                <p>Phone: 1-800-RAIL-CONNECT</p>
+                <p>Hours: 24/7</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <p>📘 Facebook | 🐦 Twitter | 📷 Instagram</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 RailConnect. All rights reserved.</p>
+            <p>Terms & Conditions | Privacy Policy</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/validation.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
